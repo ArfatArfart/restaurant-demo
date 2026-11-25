@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#2a170e">
+  <meta name="description" content="Explore ARFAT Restaurant's menu, choose your favourites and build your order.">
+  <title>ARFAT Restaurant · Menu</title>
+  <link rel="icon" href="assets/brand.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="assets/feast.webp" imagesrcset="assets/feast-small.webp 660w, assets/feast.webp 1350w" imagesizes="(max-width:600px) 96vw, 67vw">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ARFAT Restaurant · Order online (demo)">
+  <meta property="og:description" content="A demo restaurant ordering website: menu, cart, checkout and order tracking, made for phones.">
+  <meta property="og:image" content="https://arfatarfart.github.io/restaurant-demo/assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="style.css?v=5">
+  <script defer src="store.js?v=5"></script>
+  <script defer src="app.js?v=5"></script>
+</head>
+<body>
+  <a href="#menu" class="skip">Skip to menu</a>
+  <div class="demoStrip">This is a demo &mdash; want a website like this for your restaurant?</div>
+  <header class="topbar">
+    <div class="topinner">
+      <a class="brand" href="#" aria-label="ARFAT Restaurant home"><img src="assets/brand.svg" width="43" height="43" alt=""><span><b>ARFAT</b><small>RESTAURANT</small></span></a>
+      <nav aria-label="Main navigation" class="nav"><button class="navlink current" data-action="menu"><i data-icon="utensils"></i>Menu</button><button class="navlink" data-action="favourites"><i data-icon="heart"></i>Favourites</button><button class="navlink" data-action="orders"><i data-icon="receipt"></i>My orders</button></nav>
+      <div class="headerActions"><button class="location" data-action="address"><i data-icon="map-pin"></i><span id="location-label">Add address</span><i data-icon="chevron-down"></i></button><button class="cartButton" data-action="cart"><i data-icon="shopping-bag"></i><span>Cart</span><b class="count">0</b></button></div>
+    </div>
+  </header>
+  <main class="container">
+    <section class="feastHero" aria-label="Restaurant specials">
+      <picture class="feastPhoto"><img id="hero-image" sizes="(max-width:600px) 96vw, 67vw" srcset="assets/feast-small.webp 660w, assets/feast.webp 1350w" src="assets/feast.webp" alt="Butter chicken, saffron biryani and naan from the ARFAT kitchen" fetchpriority="high"></picture>
+      <div class="feastCopy"><span class="kitchenLabel"><i data-icon="flame"></i> ARFAT HOUSE SPECIALS</span>
+        <h1 id="hero-title">A feast of<br><em>flavours.</em></h1>
+        <p id="hero-desc">From rich butter chicken to fragrant dum biryani, discover the favourites from our kitchen.</p>
+        <button class="primary exploreBtn" data-action="menu"><i data-icon="utensils"></i>Explore menu</button>
+      </div>
+      <div class="featuredTile"><div><small>ON THE TABLE</small><b id="feature-dish">Butter Chicken</b></div><button class="tileAdd" data-action="hero-add" aria-label="Add featured dish to cart"><strong id="hero-price">₹319</strong><i data-icon="plus"></i></button></div>
+      <div class="dots feastDots" id="dots" aria-label="Choose featured dish"></div>
+    </section>
+    <section id="menu" class="menuSection">
+      <div class="sectionHeading"><h2>Explore our menu<span class="accentMarks" aria-hidden="true"><b></b><b></b><b></b></span></h2><label class="vegToggle"><input type="checkbox" id="veg"><span class="switch"></span>Veg only</label></div>
+      <div class="categoryList" id="categories" aria-label="Dish categories"></div>
+      <div id="dishes" class="cards" aria-live="polite"></div>
+    </section>
+  </main>
+  <footer class="restaurantFooter">
+    <div class="footerCta">
+      <div><small>HUNGRY?</small><h3>Fresh from our kitchen to your door.</h3></div>
+      <button class="primary" data-action="menu"><i data-icon="utensils"></i>Order now</button>
+    </div>
+    <div class="footerInner">
+      <div class="footerBrand"><a class="brand" href="#" aria-label="ARFAT Restaurant home"><img src="assets/brand.svg" width="42" height="42" alt=""><span><b>ARFAT</b><small>RESTAURANT</small></span></a>
+        <p>Indian kitchen, street favourites and café classics, cooked fresh every day.</p>
+        <ul class="footerMeta"><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Open daily · 11 AM – 11 PM</li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Srinagar, Kashmir</li><li><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c9 0 14-5 14-14-9 0-14 5-14 14z"/><path d="M5 19l7-7"/></svg>Cooked fresh, packed with care</li></ul>
+      </div>
+      <div class="footerLinks"><h3>Explore</h3><button data-action="menu">Our menu</button><button data-action="favourites">Favourites</button></div>
+      <div class="footerLinks"><h3>Your order</h3><button data-action="orders">My orders</button><button data-action="address">Delivery addresses</button></div>
+      <div class="footerLinks"><h3>Restaurant</h3><a href="admin.html">Staff login</a></div>
+    </div>
+    <div class="footerBase"><span>© 2026 ARFAT Restaurant. All rights reserved.</span><span>Freshly cooked · Delivered hot</span></div>
+  </footer>
+  <nav class="mobileNav" aria-label="Mobile navigation"><button class="current" data-action="menu"><i data-icon="utensils"></i>Menu</button><button data-action="favourites"><i data-icon="heart"></i>Favourites</button><button data-action="orders"><i data-icon="receipt"></i>My orders</button><button data-action="cart"><span class="mobCart"><i data-icon="shopping-bag"></i><b class="count">0</b></span>Cart</button></nav>
+  <dialog id="panel" aria-labelledby="panelTitle"><div class="panelHead"><h2 id="panelTitle"></h2><button class="iconBtn" data-action="close" aria-label="Close"><i data-icon="x"></i></button></div><div id="panelBody"></div></dialog>
+  <div class="toast" id="toast" role="status"></div>
+</body>
+</html>

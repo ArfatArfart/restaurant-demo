@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#321f15">
+<title>Staff panel · ARFAT Restaurant</title>
+<link rel="icon" href="assets/brand.svg"><link rel="stylesheet" href="style.css?v=5">
+<script defer src="store.js?v=5"></script><script defer src="admin.js?v=5"></script>
+</head>
+<body class="staffPage">
+<header class="topbar"><div class="topinner"><a class="brand" href="./"><img src="assets/brand.svg" width="40" height="40" alt=""><span><b>ARFAT</b><small>RESTAURANT</small></span></a><div class="staffNav"><a href="./">View menu</a><button id="signOut" class="secondary" hidden>Lock panel</button></div></div></header>
+<main class="container staffMain"><section id="staffGate"></section>
+<section id="dashboard" hidden>
+  <div class="boardHeading"><div><p class="smallLabel">STAFF PANEL</p><h1>Kitchen orders</h1></div><span class="localLabel">This browser</span></div>
+  <div id="stats" class="stats"></div>
+  <div class="queueGrid"><section class="queueBox"><div class="queueHead"><h2>Order queue</h2><label>Show orders<select id="filter"><option value="Active">Active orders</option><option>All orders</option><option>Received</option><option>Preparing</option><option>Out for delivery</option><option>Delivered</option><option>Cancelled</option></select></label></div><div id="queue"></div></section>
+  <section class="ticketBox" id="ticket" aria-label="Order details"></section></div>
+</section><p id="adminMsg" role="status" class="adminMsg"></p></main>
+<dialog id="cancelDialog" aria-labelledby="cancelTitle"><div class="panelHead"><h2 id="cancelTitle">Cancel this order?</h2></div><div class="confirmBody"><p>The customer will see “Cancelled” in My orders.</p><div class="decision"><button class="secondary" id="keepOrder">Keep order</button><button class="danger" id="cancelOrder">Cancel order</button></div></div></dialog>
+</body></html>
